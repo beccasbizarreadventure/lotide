@@ -21,7 +21,7 @@ const tail = function(array) {
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
 assertEqual(words.length, 3);
-assertEqual(tail(words)[1], "Labs");
+assertEqual(tail(words)[0], "Lighthouse");
 assertEqual(tail(words).length, (words.length - 1));
 
 const words2 = ["Yo Yo"];
