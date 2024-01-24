@@ -12,7 +12,7 @@ const assertEqual = function(actual, expected) {
 const tail = function(array) {
   let newTail = [];
   for (let i = 1; i < array.length; i++) {
-    newTail += array[i];
+    newTail.push(array[i]);
   }
   return newTail;
 };
@@ -20,3 +20,11 @@ const tail = function(array) {
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
 assertEqual(words.length, 3);
+
+const words2 = ["Yo Yo"];
+tail(words2);
+assertEqual(words2.length, 1);
+
+const words3 = [];
+tail(words3);
+assertEqual(words3.length, 3);
