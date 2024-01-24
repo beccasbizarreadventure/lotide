@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
 
 const tail = function(array) {
   if (array.length > 1) {
-    return array.slice(0);
+    return array.slice(1);
   } else {
     return [];
   }
@@ -21,7 +21,8 @@ const tail = function(array) {
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
 assertEqual(words.length, 3);
-assertEqual(tail(words[1]), "Lighthouse");
+assertEqual(tail(words)[1], "Labs");
+assertEqual(tail(words).length, (words.length - 1));
 
 const words2 = ["Yo Yo"];
 assertEqual(tail(words2).length, 0);
