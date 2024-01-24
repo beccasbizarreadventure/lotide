@@ -10,21 +10,21 @@ const assertEqual = function(actual, expected) {
 };
 
 const tail = function(array) {
-  let newTail = [];
-  for (let i = 1; i < array.length; i++) {
-    newTail.push(array[i]);
+  if (array.length > 1) {
+    return array.slice(0);
+  } else {
+    return [];
   }
-  return newTail;
+  
 };
 
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
 assertEqual(words.length, 3);
+assertEqual(tail(words[1]), "Lighthouse");
 
 const words2 = ["Yo Yo"];
-tail(words2);
-assertEqual(words2.length, 1);
+assertEqual(tail(words2).length, 0);
 
 const words3 = [];
-tail(words3);
-assertEqual(words3.length, 3);
+assertEqual(tail(words3).length, 0);
