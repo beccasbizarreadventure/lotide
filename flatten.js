@@ -25,11 +25,12 @@ const flatten = function(array) {
     const arrValue = array[i];
     if(!Array.isArray(arrValue)) {
       flatArray.push(arrValue);
-    }
+    } else {
     for (let k = 0; k < arrValue.length; k++) {
       flatArray.push(arrValue[k])
     }
   }
+}
   return flatArray;
 };
 
