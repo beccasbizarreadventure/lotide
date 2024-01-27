@@ -23,14 +23,13 @@ const flatten = function(array) {
   let flatArray = [];
   for (let i = 0; i < array.length; i++) {
     const arrValue = array[i];
-    if(!Array.isArray(arrValue)) {
+    if (!Array.isArray(arrValue)) {
       flatArray.push(arrValue);
-    } else {
+    }
     for (let k = 0; k < arrValue.length; k++) {
-      flatArray.push(arrValue[k])
+      flatArray.push(arrValue[k]);
     }
   }
-}
   return flatArray;
 };
 
