@@ -33,9 +33,13 @@ const middle = function(array) {
     const middleSecondValue = array[middleSecond];
     middleArray.push(middleFirstValue, middleSecondValue);
   }
+  if (array.length < 3) {
+    return [];
+  }
   return middleArray;
 };
 
+console.log(middle([])); 
 console.log(middle([1, 2, 3])); 
 console.log(middle([1, 2, 3, 4, 5])); 
 console.log(middle([1, 2, 3, 4])); 
