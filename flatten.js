@@ -20,7 +20,17 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 const flatten = function(array) {
-  return array.flat();
+  let flatArray = [];
+  for (let i = 0; i < array.length; i++) {
+    const arrValue = array[i];
+    if(!Array.isArray(arrValue)) {
+      flatArray.push(arrValue);
+    }
+    for (let k = 0; k < arrValue.length; k++) {
+      flatArray.push(arrValue[k])
+    }
+  }
+  return flatArray;
 };
 
 console.log(flatten([1, 2, [3, 4], 5, [6]]));
