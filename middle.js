@@ -20,16 +20,16 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 const middle = function(array) {
- let middleArray = [];
+  let middleArray = [];
   if (array.length % 2 !== 0) {
-   const middle = Math.floor(array.length / 2);
-   const middleValue = array[middle];
-   middleArray.push(middleValue);
+    const middle = Math.floor(array.length / 2);
+    const middleValue = array[middle];
+    middleArray.push(middleValue);
   }
   if (array.length % 2 === 0) {
     const middleFirst = Math.floor((array.length - 1) / 2);
     const middleFirstValue = array[middleFirst];
-    const middleSecond = (array.length/2);
+    const middleSecond = (array.length / 2);
     const middleSecondValue = array[middleSecond];
     middleArray.push(middleFirstValue, middleSecondValue);
   }
