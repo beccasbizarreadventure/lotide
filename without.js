@@ -20,18 +20,18 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 const without = function(source, itemsToRemove) {
-  let uniqueSource = []
+  let uniqueSource = [];
   for (let value of source) {
-  if (!itemsToRemove.includes(value)) {
+    if (!itemsToRemove.includes(value)) {
       uniqueSource.push(value);
     }
   }
   console.log(uniqueSource);
 };
 
-without([1, 2, 3], [1]); 
+without([1, 2, 3], [1]);
 without(["1", "2", "3"], [1, 2, "3"]);
 
 const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); 
+without(words, ["lighthouse"]);
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
