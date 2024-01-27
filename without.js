@@ -26,7 +26,7 @@ const without = function(source, itemsToRemove) {
       uniqueSource.push(value);
     }
   }
-  console.log(uniqueSource);
+  return uniqueSource;
 };
 
 without([1, 2, 3], [1]);
@@ -35,3 +35,4 @@ without(["1", "2", "3"], [1, 2, "3"]);
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]);
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
