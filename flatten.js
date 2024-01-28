@@ -22,12 +22,16 @@ const assertArraysEqual = function(array1, array2) {
 const flatten = function(array) {
   let flatArray = [];
   for (let i = 0; i < array.length; i++) {
+//loops through the first level of the array
     const arrValue = array[i];
     if (!Array.isArray(arrValue)) {
       flatArray.push(arrValue);
+//catches values that are not type array and pushes them to empty the array
     }
     for (let k = 0; k < arrValue.length; k++) {
+//loops through the second level of the arrays 
       flatArray.push(arrValue[k]);
+//pushes those values to the empty array
     }
   }
   return flatArray;
