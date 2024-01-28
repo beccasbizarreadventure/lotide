@@ -10,14 +10,25 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(givenString) {
-  let uniqueLetters = [];
-  for (letter of givenString) {
-    if (!uniqueLetters.includes(letter) && letter !== ' ') {
-    uniqueLetters.push(letter);
+  let countObject = {};
+
+  for (let letters of givenString) {
+    //iterates over the string givenString for each letter
+    if (letters === ' ') {
+      continue;
+      //removes ' ' as a key and tells the code to constinue
+    }
+    if (countObject[letters]) {
+      //Object[key] notation where each unique letter is a key
+      countObject[letters] += 1;
+      //Adds 1 to the count for every time a key is found to occur in givenString
+    } else {
+      countObject[letters] = 1;
+      //Default to add 1 every time the key occurs if it only occurs once
     }
   }
-  return uniqueLetters;
+  return countObject;
   //loops through the givenString and returns an array with each unique letter, excluding spaces
 };
 
-console.log(countLetters("Levi Laurel"));
+console.log(countLetters("lighthouse in the house"));
