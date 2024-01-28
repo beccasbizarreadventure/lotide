@@ -10,32 +10,34 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2) === false) {
-    console.log(`❌❌❌ Assertion Failed: ${array1} !== ${array2}`);
+const assertArraysEqual = function(input, expected) {
+  if (eqArrays(input, expected) === false) {
+    console.log(`❌❌❌ Assertion Failed: ${input} !== ${expected}`);
   }
-  if (eqArrays(array1, array2) === true) {
-    console.log(`✔️✔️✔️ Assertion Passed: ${array1} === ${array2}`);
+  if (eqArrays(input, expected) === true) {
+    console.log(`✔️✔️✔️ Assertion Passed: ${input} === ${expected}`);
   }
 };
+//assertArraysEqual calls function eqArray to test the equivelency of 2 arrays (input and expected) for length and equivalent value at each index
+//logs appropriate message based on return false or true
 
 const flatten = function(array) {
   let flatArray = [];
   for (let i = 0; i < array.length; i++) {
-//loops through the first level of the array
+    //loops through the first level of the array
     const arrValue = array[i];
     if (!Array.isArray(arrValue)) {
       flatArray.push(arrValue);
-//catches values that are not type array and pushes them to empty the array
+      //catches values that are not type array and pushes them to empty the array
     }
     for (let k = 0; k < arrValue.length; k++) {
-//loops through the second level of the arrays 
+      //loops through the second level of the arrays
       flatArray.push(arrValue[k]);
-//pushes those values to the empty array
+      //pushes those values to the empty array
     }
   }
   return flatArray;
 };
 
 console.log(flatten([1, 2, [3, 4], 5, [6]]));
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6])
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
