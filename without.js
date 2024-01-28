@@ -10,27 +10,32 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2) === false) {
-    console.log(`❌❌❌ Assertion Failed: ${array1} !== ${array2}`);
+const assertArraysEqual = function(input, expected) {
+  if (eqArrays(input, expected) === false) {
+    console.log(`❌❌❌ Assertion Failed: ${input} !== ${expected}`);
   }
-  if (eqArrays(array1, array2) === true) {
-    console.log(`✔️✔️✔️ Assertion Passed: ${array1} === ${array2}`);
+  if (eqArrays(input, expected) === true) {
+    console.log(`✔️✔️✔️ Assertion Passed: ${input} === ${expected}`);
   }
 };
+//assertArraysEqual calls function eqArray to test the equivelency of 2 arrays (input and expected) for length and equivalent value at each index
+//logs appropriate message based on return false or true
 
 const without = function(source, itemsToRemove) {
   let uniqueSource = [];
   for (let value of source) {
+    //creates a for loop to loop through the values of the source array
     if (!itemsToRemove.includes(value)) {
+      //if the current value being evaluated in the loop is NOT equal to a value in itemsToRemove then it is pushed to the empty array uniqueSource
+      //this creayes a new array containing only values that are different from itemsToRemove
       uniqueSource.push(value);
     }
   }
   return uniqueSource;
 };
 
-without([1, 2, 3], [1]);
-without(["1", "2", "3"], [1, 2, "3"]);
+console.log(without([1, 2, 3], [1])); //returns an array containing only [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"]));
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]);
