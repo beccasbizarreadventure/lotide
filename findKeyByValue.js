@@ -14,7 +14,7 @@ const findKeyByValue = function(givenObject, wantedValue) {
   //converts object to an array
   for (let entry of entriesArray) {
   //loops through all entries in the array
-    if (entry.includes(wantedValue)) {
+    if (entry[1] === wantedValue) {
       return entry[0];
     //returns the first element of the [key, value] paired array
     }
