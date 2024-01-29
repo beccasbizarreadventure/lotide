@@ -33,8 +33,8 @@ const letterPositions = function(sentence) {
     if (!results[letter]) {
       results[letter] = [];
       results[letter].push(i);
-      //if the current character has not been added to the results object as a key, it is added here 
-      //the location of the letter in the string is pushed into the array 
+      //if the current character has not been added to the results object as a key, it is added here
+      //the location of the letter in the string is pushed into the array
     } else {
       results[letter].push(i);
       //if a letter already exists as a key in the results object, the location of the next instance is pushed into the array here
