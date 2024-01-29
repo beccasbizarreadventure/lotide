@@ -10,18 +10,18 @@ const assertEqual = function(actual, expected) {
 };
 
 const findKeyByValue = function(givenObject, wantedValue) {
- const entriesArray = Object.entries(givenObject);
- //converts object to an array
- for (let entry of entriesArray) {
+  const entriesArray = Object.entries(givenObject);
+  //converts object to an array
+  for (let entry of entriesArray) {
   //loops through all entries in the array
-  if (entry.includes(wantedValue)) {
-    return entry[0];
+    if (entry.includes(wantedValue)) {
+      return entry[0];
     //returns the first element of the [key, value] paired array
+    }
   }
- }
 };
 
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
