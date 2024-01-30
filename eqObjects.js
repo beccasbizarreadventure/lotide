@@ -33,8 +33,10 @@ const eqObjects = function(object1, object2) {
     //automatically returns false if the 2 array lengths are not equal
   }
   for (let key of object1Array) {
-    if (Array.isArray(object1[key]) || Array.isArray(object2[key])) {
-      return eqArrays(object1[key], object2[key]);
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+      if (!eqArrays(object1[key], object2[key])) {
+        return false;
+      }
       //determines if the value @ object[key] is a nested array and evaluates it seperately
     } else if (object1[key] !== object2[key]) {
       return false;
