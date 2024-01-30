@@ -40,20 +40,16 @@ const eqObjects = function(object1, object2) {
       //determines if the value @ object[key] is a nested array and evaluates it seperately
     } else if (object1[key] !== object2[key]) {
       return false;
-    } else {
-      return true;
-      //code continues for evaluating primative data types
     }
   }
+  return true;
 };
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
-eqObjects(shirtObject , anotherShirtObject);
 assertEqual(eqObjects(shirtObject , anotherShirtObject), true);
 
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-eqObjects(shirtObject , longSleeveShirtObject);
 assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false);
 
 const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
