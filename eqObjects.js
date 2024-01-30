@@ -35,7 +35,7 @@ const eqObjects = function(object1, object2) {
   for (let key of object1Array) {
     if (Array.isArray(object1[key]) || Array.isArray(object2[key])) {
       return eqArrays(object1[key], object2[key]);
-      //determines if the value @ object[key] is a nested array and evaluates it seperately 
+      //determines if the value @ object[key] is a nested array and evaluates it seperately
     } else if (object1[key] !== object2[key]) {
       return false;
     } else {
@@ -47,16 +47,16 @@ const eqObjects = function(object1, object2) {
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
-eqObjects(shirtObject , anotherShirtObject); 
+eqObjects(shirtObject , anotherShirtObject);
 assertEqual(eqObjects(shirtObject , anotherShirtObject), true);
 
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-eqObjects(shirtObject , longSleeveShirtObject); 
+eqObjects(shirtObject , longSleeveShirtObject);
 assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false);
 
 const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), true); 
+assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), true);
 
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false); 
+assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
