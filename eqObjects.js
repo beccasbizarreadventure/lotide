@@ -1,3 +1,17 @@
+const eqArrays = function(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+  //if the length of the 2 arrays is not the same then it returns false as the arrays are not equivalent
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
+      return false;
+    }
+    //if the value and type of value at each index [i] are not the same then it also returns false
+  }
+  return true;
+};
+
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✔️✔️✔️ Assertion Passed: ${actual} === ${expected}`);
@@ -34,3 +48,10 @@ assertEqual(eqObjects(shirtObject , anotherShirtObject), true);
 const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
 eqObjects(shirtObject , longSleeveShirtObject); // => false
 assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false);
+
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject); // => true
+
+const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject); // => false
