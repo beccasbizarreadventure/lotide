@@ -11,14 +11,14 @@ const assertArraysEqual = function(input, expected) {
 const takeUntil = function(array, callback) {
   const results = [];
   for (let item of array) {
-    if (array[item] !== callback[item]) {
+    if (!callback[item]) {
       results.push(array[item]);
     }
-    if (array[item] === callback[item]) {
-      return results;
+    if (callback[item]) {
+      break;
     }
   }
-
+return results;
 };
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
