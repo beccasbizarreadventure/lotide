@@ -31,4 +31,4 @@ const result = findKey({
 }, x => x.stars === 2);
 console.log(result);
 
-assertEqual("noma", "noma");
+assertEqual(result, "noma");
