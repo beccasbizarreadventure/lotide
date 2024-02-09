@@ -8,3 +8,5 @@ const assertEqual = function(actual, expected) {
   }
 // if the actual inputted value is NOT equivalent to the expected, it will print a negative message
 };
+
+module.exports = assertEqual;
