@@ -29,3 +29,5 @@ const middle = function(array) {
   //the middle values are stored and then pushed to middleArray
   return middleArray;
 };
+
+module.exports = middle;
