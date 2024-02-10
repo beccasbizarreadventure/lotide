@@ -50,3 +50,5 @@ assertObjectsEqual({a:"1", b:"2", c:"3"}, {a:"1", b:"2", c:"3"}); //true
 assertObjectsEqual({a:"1", b:"2", c:"3"}, {a:"1", b:"2", c:3}); //false
 assertObjectsEqual({a:"1", b:"2", c:"3"}, {a:"1", b:"2", c:"3", d:"4"}); //false
 assertObjectsEqual({a:"1", b:"2", c:"3"}, {b:"1", a:"2", c:"3"}); //false
+
+module.exports = assertObjectsEqual;

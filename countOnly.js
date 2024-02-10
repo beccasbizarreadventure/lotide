@@ -49,3 +49,5 @@ assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
 //is undefined because, even though it is in allItems, in the itemsToCount array it equals False and only true values are being counted in the results array
+
+module.exports = countOnly;
