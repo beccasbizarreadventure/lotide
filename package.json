@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@beccasbizarreadventure/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of the Lodash library, this library was published for learning purposes",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/beccasbizarreadventure/lotide.git"
   },
-  "author": "",
+  "author": {
+    "name": "Rebecca S",
+    "url": "https://github.com/beccasbizarreadventure"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/beccasbizarreadventure/lotide/issues"
