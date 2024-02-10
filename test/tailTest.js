@@ -1,16 +1,21 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
-assertEqual(tail(words)[0], "Lighthouse");
-assertEqual(tail(words).length, (words.length - 1));
-//the values of the arrays are not being compared, as they cannot be compared in this way
-//instead the length of the 2 arrays or the value at a specific index are compare for equivalency
-
-const words2 = ["Yo Yo"];
-assertEqual(tail(words2).length, 0);
-
-const words3 = [];
-assertEqual(tail(words3).length, 0);
+describe("#tail", () => {
+  it("returns a given array without the first indexed value", () => {
+    assert.deepEqual(tail(["Yo Yo", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+  });
+  it("does not change the original given array after the function has been executed", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.strictEqual(words.length, 3);
+  });
+  it("returns an empty array when given an array with one value", () => {
+    const words = ["Yo Yo"];
+    const words2 = tail(words);
+    assert.strictEqual(words2.length, 0);
+  });
+  it("returns an empty array when given an empty array", () => {
+    assert.deepEqual(tail([]), []);
+  });
+});
